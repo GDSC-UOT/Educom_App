@@ -1,6 +1,6 @@
 class Routes {
   static const login = '/login';
-  static const register = '/signup';
+  static const signup = '/signup';
   static const authentication = '/authentication';
   static const home =  '/home';
   static const profile = '/profile';

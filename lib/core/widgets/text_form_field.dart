@@ -39,7 +39,7 @@ class AppTextFormField extends StatelessWidget {
       decoration: InputDecoration(
         isDense: true,
         contentPadding: contentPadding ??
-            EdgeInsets.symmetric(vertical: 25.h, horizontal: 25.w),
+            EdgeInsets.symmetric(vertical: 20.h, horizontal: 25.w),
         filled: true,
         fillColor: backgroundColor ?? ColorManager.fieldColor,
         hintText: hintText,

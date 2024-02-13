@@ -4,20 +4,15 @@ import 'package:ed_community/core/routing/routes.dart';
 import 'package:ed_community/core/themes/color_manager.dart';
 import 'package:ed_community/core/themes/text_style_manager.dart';
 import 'package:ed_community/core/widgets/main_button.dart';
-import 'package:ed_community/features/login/ui/widgets/login_form.dart';
+import 'package:ed_community/features/signup/ui/widgets/signup_form.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_svg/svg.dart';
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key});
+class SignupScreen extends StatelessWidget {
+  const SignupScreen({super.key});
 
-  @override
-  State<LoginScreen> createState() => _LoginScreenState();
-}
-
-class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,30 +28,30 @@ class _LoginScreenState extends State<LoginScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              VerticalSpacer(space: 15),
+              const VerticalSpacer(space: 15),
               Center(
                 child: SvgPicture.asset(
                   "assets/svgs/AppLogo.svg",
                   semanticsLabel: "App Logo",
                 ),
               ),
-              VerticalSpacer(space: 60),
+              const VerticalSpacer(space: 30),
               Text(
-                "welcome again!",
+                "Join our amazing learning community!",
                 style: TextStyleManager.bold16px
                     .copyWith(color: ColorManager.white50),
               ),
-              VerticalSpacer(space: 10),
+              const VerticalSpacer(space: 10),
               Text(
-                "Please enter your login information for a unique and secure experience.",
+                "Create your account now to begin your journey of communicating with your colleagues and teachers.",
                 style: TextStyleManager.regular14px
                     .copyWith(color: ColorManager.white25),
               ),
-              VerticalSpacer(space: 35),
-              const LoginForm(),
-              VerticalSpacer(space: 40),
+              const VerticalSpacer(space: 32),
+              const SignupForm(),
+              const VerticalSpacer(space: 40),
               AppMainButton(
-                text: "Login",
+                text: "Sign up",
                 onPressed: () {},
               ),
               const Spacer(),
@@ -66,17 +61,17 @@ class _LoginScreenState extends State<LoginScreen> {
                   text: TextSpan(
                     children: [
                       TextSpan(
-                        text: "Don't have an account? ",
+                        text: "Already have an Account? ",
                         style: TextStyleManager.regular14px
                             .copyWith(color: ColorManager.gray200),
                       ),
                       TextSpan(
-                          text: "Sign up",
+                          text: "Log in",
                           style: TextStyleManager.medium14px
                               .copyWith(color: ColorManager.primary),
                           recognizer: TapGestureRecognizer()
                             ..onTap = () {
-                              context.pushNamed(Routes.signup);
+                              context.pushReplacementNamed(Routes.login);
                             }),
                     ],
                   ),
