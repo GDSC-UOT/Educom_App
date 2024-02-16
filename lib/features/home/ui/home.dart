@@ -4,6 +4,7 @@ import 'package:ed_community/core/themes/text_style_manager.dart';
 import 'package:ed_community/core/widgets/app_logo.dart';
 import 'package:ed_community/core/widgets/text_form_field.dart';
 import 'package:ed_community/features/home/ui/widgets/carousel_list.dart';
+import 'package:ed_community/features/home/ui/widgets/navigation_drawer.dart';
 import 'package:ed_community/features/home/ui/widgets/papers_list.dart';
 import 'package:ed_community/features/home/ui/widgets/subjects_list.dart';
 import 'package:flutter/material.dart';
@@ -17,9 +18,44 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  final GlobalKey<ScaffoldState> scaffoldKey = new GlobalKey<ScaffoldState>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: scaffoldKey,
+      drawer: const NavigationDrawerWidget(),
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        automaticallyImplyLeading: false,
+        leading: const AppLogo(),
+        leadingWidth: 32,
+        title: Text(
+          "EduCommunity",
+          style: TextStyleManager.regular14px,
+        ),
+        actions: [
+          GestureDetector(
+            onTap: () {
+              scaffoldKey.currentState?.openDrawer();
+            },
+            child: Container(
+              height: 55.h,
+              width: 55.w,
+              decoration: BoxDecoration(
+                color: ColorManager.fieldColor,
+                borderRadius: BorderRadius.circular(40.r),
+              ),
+              child: const Icon(
+                Icons.menu,
+                color: Colors.white,
+              ),
+            ),
+          ),
+        ],
+      ),
+      extendBodyBehindAppBar: true,
       backgroundColor: Colors.transparent,
       body: Container(
         height: MediaQuery.of(context).size.height,
@@ -34,38 +70,11 @@ class _HomeScreenState extends State<HomeScreen> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Padding(
-                  padding:
-                      EdgeInsets.symmetric(horizontal: 16.0.w, vertical: 16.h),
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 16.0.w,
+                  ),
                   child: Column(
                     children: [
-                      AppBar(
-                        backgroundColor: Colors.transparent,
-                        elevation: 0,
-                        automaticallyImplyLeading: false,
-                        leading: const AppLogo(),
-                        leadingWidth: 32,
-                        title: Text(
-                          "EduCommunity",
-                          style: TextStyleManager.regular14px,
-                        ),
-                        actions: [
-                          GestureDetector(
-                            onTap: () {},
-                            child: Container(
-                              height: 55.h,
-                              width: 55.w,
-                              decoration: BoxDecoration(
-                                color: ColorManager.fieldColor,
-                                borderRadius: BorderRadius.circular(40.r),
-                              ),
-                              child: const Icon(
-                                Icons.menu,
-                                color: Colors.white,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
                       const VerticalSpacer(
                         space: 16,
                       ),
@@ -105,10 +114,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: SubjectsList(),
                 ),
                 const VerticalSpacer(space: 24),
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 16.0.w),
-                  child: PapersList(),
-                ),
+                PapersList(),
               ],
             ),
           ),

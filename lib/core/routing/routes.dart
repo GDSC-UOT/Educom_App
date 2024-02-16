@@ -9,5 +9,8 @@ class Routes {
   static const chat = '/chat';
   static const newMessage = '/new-message';
   static const examsDate = '/exams-date';
+  static const tasks = '/tasks';
+  static const vacationRequest = '/vacation-request';
+  static const createVacation = '/create-vacation';
 
 }
