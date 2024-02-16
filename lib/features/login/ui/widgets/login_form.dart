@@ -26,7 +26,7 @@ class _LoginFormState extends State<LoginForm> {
               color: ColorManager.secondaryBG,
             ),
           ),
-          VerticalSpacer(space: 16),
+          const VerticalSpacer(space: 16),
           AppTextFormField(
             hintText: "Password",
             isObscureText: true,
@@ -36,7 +36,7 @@ class _LoginFormState extends State<LoginForm> {
               color: ColorManager.secondaryBG,
             ),
           ),
-          VerticalSpacer(space: 10),
+          const VerticalSpacer(space: 10),
           Align(
             alignment: Alignment.centerRight,
             child: Text(

@@ -3,12 +3,12 @@ import 'package:ed_community/core/helpers/spacers.dart';
 import 'package:ed_community/core/routing/routes.dart';
 import 'package:ed_community/core/themes/color_manager.dart';
 import 'package:ed_community/core/themes/text_style_manager.dart';
+import 'package:ed_community/core/widgets/app_logo.dart';
 import 'package:ed_community/core/widgets/main_button.dart';
 import 'package:ed_community/features/signup/ui/widgets/signup_form.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
 
 class SignupScreen extends StatelessWidget {
   const SignupScreen({super.key});
@@ -18,7 +18,7 @@ class SignupScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.transparent,
       body: Container(
-        padding: EdgeInsets.symmetric(horizontal: 32.w, vertical: 40.h),
+        padding: EdgeInsets.symmetric(horizontal: 32.w, vertical: 32.h),
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
         alignment: Alignment.topLeft,
@@ -29,11 +29,8 @@ class SignupScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const VerticalSpacer(space: 15),
-              Center(
-                child: SvgPicture.asset(
-                  "assets/svgs/AppLogo.svg",
-                  semanticsLabel: "App Logo",
-                ),
+              const Center(
+                child: AppLogo(),
               ),
               const VerticalSpacer(space: 30),
               Text(
@@ -52,7 +49,9 @@ class SignupScreen extends StatelessWidget {
               const VerticalSpacer(space: 40),
               AppMainButton(
                 text: "Sign up",
-                onPressed: () {},
+                onPressed: () {
+                  context.pushNamed(Routes.home);
+                },
               ),
               const Spacer(),
               Center(

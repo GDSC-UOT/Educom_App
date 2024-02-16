@@ -3,12 +3,12 @@ import 'package:ed_community/core/helpers/spacers.dart';
 import 'package:ed_community/core/routing/routes.dart';
 import 'package:ed_community/core/themes/color_manager.dart';
 import 'package:ed_community/core/themes/text_style_manager.dart';
+import 'package:ed_community/core/widgets/app_logo.dart';
 import 'package:ed_community/core/widgets/main_button.dart';
 import 'package:ed_community/features/login/ui/widgets/login_form.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -33,31 +33,30 @@ class _LoginScreenState extends State<LoginScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              VerticalSpacer(space: 15),
-              Center(
-                child: SvgPicture.asset(
-                  "assets/svgs/AppLogo.svg",
-                  semanticsLabel: "App Logo",
-                ),
+              const VerticalSpacer(space: 15),
+              const Center(
+                child: AppLogo(),
               ),
-              VerticalSpacer(space: 60),
+              const VerticalSpacer(space: 60),
               Text(
                 "welcome again!",
                 style: TextStyleManager.bold16px
                     .copyWith(color: ColorManager.white50),
               ),
-              VerticalSpacer(space: 10),
+              const VerticalSpacer(space: 10),
               Text(
                 "Please enter your login information for a unique and secure experience.",
                 style: TextStyleManager.regular14px
                     .copyWith(color: ColorManager.white25),
               ),
-              VerticalSpacer(space: 35),
+              const VerticalSpacer(space: 35),
               const LoginForm(),
-              VerticalSpacer(space: 40),
+              const VerticalSpacer(space: 40),
               AppMainButton(
                 text: "Login",
-                onPressed: () {},
+                onPressed: () {
+                  context.pushNamed(Routes.home);
+                },
               ),
               const Spacer(),
               Center(

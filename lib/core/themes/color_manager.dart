@@ -7,6 +7,7 @@ class ColorManager {
   static const Color gray100 = Color(0xFFE7E7E7);
   static const Color white50 = Color(0xFFFCFCFC);
   static const Color white25 = Color(0xFFD1D1D1);
+  static const Color blue17 = Color(0xFF3DCBD6);
 
   static const Color primary = Color(0xFF38BDF8);
   static const Color fieldColor = Color(0xFF1F1F2F);

@@ -8,11 +8,11 @@ class AppRouter {
   Route generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case Routes.login:
-        return MaterialPageRoute(builder: (_) => LoginScreen());
+        return MaterialPageRoute(builder: (_) => const LoginScreen());
       case Routes.signup:
-        return MaterialPageRoute(builder: (_) => SignupScreen());
+        return MaterialPageRoute(builder: (_) => const SignupScreen());
       default:
-        return MaterialPageRoute(builder: (_) => HomeScreen());
+        return MaterialPageRoute(builder: (_) => const HomeScreen());
     }
   }
 }
