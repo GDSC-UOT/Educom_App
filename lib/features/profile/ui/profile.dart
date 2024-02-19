@@ -2,7 +2,6 @@ import 'package:ed_community/core/helpers/extensions.dart';
 import 'package:ed_community/core/helpers/spacers.dart';
 import 'package:ed_community/core/themes/color_manager.dart';
 import 'package:ed_community/core/themes/text_style_manager.dart';
-import 'package:ed_community/core/widgets/app_logo.dart';
 import 'package:ed_community/core/widgets/main_button.dart';
 import 'package:ed_community/features/profile/ui/widgets/profile_details.dart';
 import 'package:ed_community/features/profile/ui/widgets/profile_picture.dart';
@@ -69,6 +68,5 @@ class ProfileScreen extends StatelessWidget {
         ),
       ),
     );
-    ;
   }
 }

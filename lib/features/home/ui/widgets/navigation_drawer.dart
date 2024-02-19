@@ -1,8 +1,10 @@
+import 'package:ed_community/core/helpers/extensions.dart';
 import 'package:ed_community/core/helpers/spacers.dart';
 import 'package:ed_community/core/routing/routes.dart';
 import 'package:ed_community/core/themes/color_manager.dart';
 import 'package:ed_community/core/themes/text_style_manager.dart';
 import 'package:ed_community/core/widgets/app_logo.dart';
+import 'package:ed_community/features/home/ui/widgets/log_out_dialog.dart';
 import 'package:ed_community/features/home/ui/widgets/navigation_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -65,7 +67,16 @@ class NavigationDrawerWidget extends StatelessWidget {
                     route: Routes.vacationRequest),
                 Spacer(),
                 NavigationItem(
-                    title: "Log Out", icon: Icons.logout, onTap: () {}),
+                    title: "Log Out",
+                    icon: Icons.logout,
+                    onTap: () {
+                      context.pop();
+                      showDialog(
+                          context: context,
+                          builder: (ctx) {
+                            return LogoutDialog();
+                          });
+                    }),
                 VerticalSpacer(space: 32),
               ],
             ),
