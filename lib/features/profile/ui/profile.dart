@@ -22,7 +22,7 @@ class ProfileScreen extends StatelessWidget {
           onPressed: () {
             context.pop();
           },
-          icon: Icon(
+          icon: const Icon(
             Icons.arrow_back,
             color: Colors.white,
           ),
@@ -49,18 +49,18 @@ class ProfileScreen extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                VerticalSpacer(space: 40),
-                ProfilePicture(),
-                VerticalSpacer(space: 16),
+                const VerticalSpacer(space: 40),
+                const ProfilePicture(),
+                const VerticalSpacer(space: 16),
                 Text(
                   "Maryam Moayyad",
                   style: TextStyleManager.medium14px.copyWith(
                     color: Colors.white,
                   ),
                 ),
-                VerticalSpacer(space: 32),
-                ProfileDetails(),
-                Spacer(),
+                const VerticalSpacer(space: 32),
+                const ProfileDetails(),
+                const Spacer(),
                 AppMainButton(text: "Save", onPressed: () {})
               ],
             ),

@@ -18,7 +18,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  final GlobalKey<ScaffoldState> scaffoldKey = new GlobalKey<ScaffoldState>();
+  final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   Widget build(BuildContext context) {
@@ -73,12 +73,12 @@ class _HomeScreenState extends State<HomeScreen> {
                   padding: EdgeInsets.symmetric(
                     horizontal: 16.0.w,
                   ),
-                  child: Column(
+                  child: const Column(
                     children: [
-                      const VerticalSpacer(
+                      VerticalSpacer(
                         space: 16,
                       ),
-                      const AppTextFormField(
+                      AppTextFormField(
                         hintText: "Search Anything",
                         prefixIcon: Icon(
                           Icons.search,

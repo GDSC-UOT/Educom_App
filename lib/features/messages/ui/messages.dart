@@ -1,14 +1,34 @@
 import 'package:ed_community/core/helpers/extensions.dart';
 import 'package:ed_community/core/themes/color_manager.dart';
 import 'package:ed_community/core/themes/text_style_manager.dart';
-import 'package:ed_community/features/notifications/ui/widgets/notification_widget.dart';
+import 'package:ed_community/features/messages/ui/widgets/message_chat_widget.dart';
 import 'package:flutter/material.dart';
 
-class NotificationsScreen extends StatelessWidget {
-  const NotificationsScreen({super.key});
+class MessagesScreen extends StatelessWidget {
+  const MessagesScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    List<MessageChatWidget> messages = [
+      const MessageChatWidget(
+        title: "Dr. Ali Hassan",
+        subtitle: "Hello, Mohammed",
+        imageUrl: "assets/images/person.png",
+        newMessages: 2,
+      ),
+      const MessageChatWidget(
+          title: "Dr. Mustafa Ahmed",
+          subtitle: "Hello, Mohammed",
+          imageUrl: "assets/images/person.png",
+          time: "1hr",
+          read: true),
+      const MessageChatWidget(
+        title: "Dr. Ali Hassan",
+        subtitle: "Hello, Mohammed",
+        imageUrl: "assets/images/person.png",
+        time: "Yesterday",
+      ),
+    ];
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,
@@ -24,7 +44,7 @@ class NotificationsScreen extends StatelessWidget {
           ),
         ),
         title: Text(
-          "Notifications",
+          "Messages",
           style: TextStyleManager.medium16px.copyWith(
             color: Colors.white,
           ),
@@ -41,15 +61,9 @@ class NotificationsScreen extends StatelessWidget {
         child: SafeArea(
           child: ListView.builder(
             itemBuilder: (ctx, index) {
-              return const NotificationWidget(
-                title: "Dr. Ali Hassan",
-                subtitle:
-                    "Thursday's exam date has been postponsed until further notice",
-                imageUrl: "assets/images/person.png",
-                time: "1hr",
-              );
+              return messages[index];
             },
-            itemCount: 3,
+            itemCount: messages.length,
           ),
         ),
       ),

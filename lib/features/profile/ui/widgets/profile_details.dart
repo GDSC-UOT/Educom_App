@@ -11,28 +11,28 @@ class ProfileDetails extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        AppTextFormField(
+        const AppTextFormField(
           hintText: "Full Name",
           prefixIcon: Icon(
             Icons.person,
             color: ColorManager.secondaryBG,
           ),
         ),
-        VerticalSpacer(space: 16),
-        AppTextFormField(
+        const VerticalSpacer(space: 16),
+        const AppTextFormField(
           hintText: "Email",
           prefixIcon: Icon(
             Icons.email,
             color: ColorManager.secondaryBG,
           ),
         ),
-        VerticalSpacer(space: 16),
+        const VerticalSpacer(space: 16),
         AppTextFormField(
           hintText: "Number",
           hintStyle: TextStyleManager.regular14px.copyWith(
             color: ColorManager.white25,
           ),
-          prefixIcon: Icon(
+          prefixIcon: const Icon(
             Icons.phone,
             color: ColorManager.secondaryBG,
           ),

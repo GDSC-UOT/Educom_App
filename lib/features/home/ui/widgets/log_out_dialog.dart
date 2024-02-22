@@ -26,18 +26,18 @@ class LogoutDialog extends StatelessWidget {
             Text("Log out",
                 style:
                     TextStyleManager.medium14px.copyWith(color: Colors.white)),
-            VerticalSpacer(space: 20),
+            const VerticalSpacer(space: 20),
             Text(
               "Are you sure you want to log out?",
               style: TextStyleManager.regular14px.copyWith(color: Colors.white),
             ),
-            VerticalSpacer(space: 24),
+            const VerticalSpacer(space: 24),
             AppMainButton(
                 text: "Log Out",
                 onPressed: () {
                   context.pop();
                 }),
-            VerticalSpacer(space: 16),
+            const VerticalSpacer(space: 16),
             AppSecondaryButton(
                 text: "Cancel",
                 onPressed: () {

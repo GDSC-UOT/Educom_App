@@ -28,7 +28,7 @@ class NavigationDrawerWidget extends StatelessWidget {
                     height: 36.h,
                     width: 36.w,
                   ),
-                  HorizontalSpacer(space: 16),
+                  const HorizontalSpacer(space: 16),
                   Text(
                     "EduCom",
                     style: TextStyleManager.regular14px.copyWith(
@@ -37,11 +37,11 @@ class NavigationDrawerWidget extends StatelessWidget {
                   )
                 ],
               ),
-              VerticalSpacer(space: 32),
+              const VerticalSpacer(space: 32),
               Divider(
                 color: Colors.white.withOpacity(0.3),
               ),
-              VerticalSpacer(space: 16),
+              const VerticalSpacer(space: 16),
               const NavigationItem(
                   title: "Profile", icon: Icons.person, route: Routes.profile),
               const NavigationItem(
@@ -49,9 +49,9 @@ class NavigationDrawerWidget extends StatelessWidget {
                   icon: Icons.notifications,
                   route: Routes.notifications),
               const NavigationItem(
-                  title: "Message",
+                  title: "Messages",
                   icon: Icons.chat_bubble_rounded,
-                  route: Routes.chat),
+                  route: Routes.messages),
               const NavigationItem(
                   title: "Task", icon: Icons.task, route: Routes.tasks),
               const NavigationItem(
@@ -62,7 +62,7 @@ class NavigationDrawerWidget extends StatelessWidget {
                   title: "Vacation Request",
                   icon: Icons.event_busy,
                   route: Routes.vacationRequest),
-              Spacer(),
+              const Spacer(),
               NavigationItem(
                   title: "Log Out",
                   icon: Icons.logout,
@@ -71,10 +71,10 @@ class NavigationDrawerWidget extends StatelessWidget {
                     showDialog(
                         context: context,
                         builder: (ctx) {
-                          return LogoutDialog();
+                          return const LogoutDialog();
                         });
                   }),
-              VerticalSpacer(space: 32),
+              const VerticalSpacer(space: 32),
             ],
           ),
         ),
