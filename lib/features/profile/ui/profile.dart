@@ -1,7 +1,7 @@
-import 'package:ed_community/core/helpers/extensions.dart';
 import 'package:ed_community/core/helpers/spacers.dart';
 import 'package:ed_community/core/themes/color_manager.dart';
 import 'package:ed_community/core/themes/text_style_manager.dart';
+import 'package:ed_community/core/widgets/custom_app_bar.dart';
 import 'package:ed_community/core/widgets/main_button.dart';
 import 'package:ed_community/features/profile/ui/widgets/profile_details.dart';
 import 'package:ed_community/features/profile/ui/widgets/profile_picture.dart';
@@ -14,26 +14,9 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        automaticallyImplyLeading: false,
-        leading: IconButton(
-          onPressed: () {
-            context.pop();
-          },
-          icon: const Icon(
-            Icons.arrow_back,
-            color: Colors.white,
-          ),
-        ),
-        title: Text(
-          "Profile",
-          style: TextStyleManager.medium16px.copyWith(
-            color: Colors.white,
-          ),
-        ),
-      ),
+      appBar: PreferredSize(
+          preferredSize: const Size.fromHeight(65),
+          child: CustomAppBar(context, "Profile")),
       extendBodyBehindAppBar: true,
       backgroundColor: Colors.transparent,
       body: Container(

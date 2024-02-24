@@ -6,6 +6,7 @@ import 'package:ed_community/features/messages/ui/screens/messages.dart';
 import 'package:ed_community/features/notifications/ui/notifications.dart';
 import 'package:ed_community/features/profile/ui/profile.dart';
 import 'package:ed_community/features/signup/ui/signup.dart';
+import 'package:ed_community/features/tasks/ui/tasks.dart';
 import 'package:flutter/material.dart';
 
 class AppRouter {
@@ -23,6 +24,8 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => const MessagesScreen());
       case Routes.examsDate:
         return MaterialPageRoute(builder: (_) => const ExamDatesScreen());
+      case Routes.tasks:
+        return MaterialPageRoute(builder: (_) => const TasksScreen());
       default:
         return MaterialPageRoute(builder: (_) => const HomeScreen());
     }

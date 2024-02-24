@@ -1,6 +1,5 @@
-import 'package:ed_community/core/helpers/extensions.dart';
 import 'package:ed_community/core/themes/color_manager.dart';
-import 'package:ed_community/core/themes/text_style_manager.dart';
+import 'package:ed_community/core/widgets/custom_app_bar.dart';
 import 'package:ed_community/features/notifications/ui/widgets/notification_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -10,26 +9,7 @@ class NotificationsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        automaticallyImplyLeading: false,
-        leading: IconButton(
-          onPressed: () {
-            context.pop();
-          },
-          icon: const Icon(
-            Icons.arrow_back,
-            color: Colors.white,
-          ),
-        ),
-        title: Text(
-          "Notifications",
-          style: TextStyleManager.medium16px.copyWith(
-            color: Colors.white,
-          ),
-        ),
-      ),
+      appBar: CustomAppBar(context, "Notifications"),
       extendBodyBehindAppBar: true,
       backgroundColor: Colors.transparent,
       body: Container(

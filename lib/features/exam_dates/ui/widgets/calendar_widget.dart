@@ -31,11 +31,12 @@ class CalendarWidget extends StatelessWidget {
           DateTime.now().day + 2, 17, 0),
     ),
   ];
-  late DateTime selectedDate = DateTime.now();
   CalendarWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
+    late DateTime selectedDate = DateTime.now();
+
     return Calendar(
       startOnMonday: true,
       weekDays: const ['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su'],
