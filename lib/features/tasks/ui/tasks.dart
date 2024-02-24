@@ -15,8 +15,18 @@ class TasksScreen extends StatelessWidget {
         taskDescription:
             "A faucibus neque tortor volutpat diam consectetur adipiscing. Id augue in libero ac tincidunt scelerisque lobortis. Vitae orci dui congue volutpat porta porta sapien ac. Eget eget urna cursus dolor vitae turpis. Donec risus vulputate lorem est ornare quis duis hendrerit.",
         taskCourse: "Chemistry",
+        taskColor: ColorManager.primary,
         endTime: DateTime.now(),
-      )
+      ),
+      TaskCardWidget(
+        profName: "Dr. Sura Ali",
+        profImage: "assets/images/person.png",
+        taskDescription:
+            "A faucibus neque tortor volutpat diam consectetur adipiscing. Id augue in libero ac tincidunt scelerisque lobortis. Vitae orci dui congue volutpat porta porta sapien ac. Eget eget urna cursus dolor vitae turpis. Donec risus vulputate lorem est ornare quis duis hendrerit.",
+        taskCourse: "Dental Anatomy",
+        taskColor: ColorManager.yellow400,
+        endTime: DateTime.now(),
+      ),
     ];
     return Scaffold(
       appBar: CustomAppBar(
