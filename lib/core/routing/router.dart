@@ -1,7 +1,8 @@
 import 'package:ed_community/core/routing/routes.dart';
+import 'package:ed_community/features/exam_dates/ui/exam_dates.dart';
 import 'package:ed_community/features/home/ui/home.dart';
 import 'package:ed_community/features/login/ui/login.dart';
-import 'package:ed_community/features/messages/ui/messages.dart';
+import 'package:ed_community/features/messages/ui/screens/messages.dart';
 import 'package:ed_community/features/notifications/ui/notifications.dart';
 import 'package:ed_community/features/profile/ui/profile.dart';
 import 'package:ed_community/features/signup/ui/signup.dart';
@@ -20,6 +21,8 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => const NotificationsScreen());
       case Routes.messages:
         return MaterialPageRoute(builder: (_) => const MessagesScreen());
+      case Routes.examsDate:
+        return MaterialPageRoute(builder: (_) => const ExamDatesScreen());
       default:
         return MaterialPageRoute(builder: (_) => const HomeScreen());
     }

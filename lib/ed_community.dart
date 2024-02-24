@@ -15,6 +15,7 @@ class EdCommunity extends StatelessWidget {
         child: MaterialApp(
           theme: ThemeData(
             fontFamily: "SF-Pro",
+            brightness: Brightness.dark,
           ),
           title: "The Bored App",
           onGenerateRoute: appRouter.generateRoute,

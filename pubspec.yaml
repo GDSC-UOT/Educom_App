@@ -38,6 +38,8 @@ dependencies:
   flutter_screenutil: ^5.9.0
   flutter_svg: ^2.0.9
   infinite_carousel: ^1.0.3
+  flutter_neat_and_clean_calendar: ^0.3.16+36
+  intl: ^0.19.0
 
 dev_dependencies:
   flutter_test:

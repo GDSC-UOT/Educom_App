@@ -1,34 +1,19 @@
 import 'package:ed_community/core/helpers/extensions.dart';
 import 'package:ed_community/core/themes/color_manager.dart';
 import 'package:ed_community/core/themes/text_style_manager.dart';
-import 'package:ed_community/features/messages/ui/widgets/message_chat_widget.dart';
+import 'package:ed_community/features/exam_dates/ui/widgets/calendar_widget.dart';
 import 'package:flutter/material.dart';
 
-class MessagesScreen extends StatelessWidget {
-  const MessagesScreen({super.key});
+class ExamDatesScreen extends StatefulWidget {
+  const ExamDatesScreen({super.key});
 
   @override
+  State<ExamDatesScreen> createState() => _ExamDatesScreenState();
+}
+
+class _ExamDatesScreenState extends State<ExamDatesScreen> {
+  @override
   Widget build(BuildContext context) {
-    List<MessageChatWidget> messages = [
-      const MessageChatWidget(
-        title: "Dr. Ali Hassan",
-        subtitle: "Hello, Mohammed",
-        imageUrl: "assets/images/person.png",
-        newMessages: 2,
-      ),
-      const MessageChatWidget(
-          title: "Dr. Mustafa Ahmed",
-          subtitle: "Hello, Mohammed",
-          imageUrl: "assets/images/person.png",
-          time: "1hr",
-          read: true),
-      const MessageChatWidget(
-        title: "Dr. Ali Hassan",
-        subtitle: "Hello, Mohammed",
-        imageUrl: "assets/images/person.png",
-        time: "Yesterday",
-      ),
-    ];
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,
@@ -44,7 +29,7 @@ class MessagesScreen extends StatelessWidget {
           ),
         ),
         title: Text(
-          "Messages",
+          "Exam Date",
           style: TextStyleManager.medium16px.copyWith(
             color: Colors.white,
           ),
@@ -59,13 +44,10 @@ class MessagesScreen extends StatelessWidget {
         decoration: const BoxDecoration(
             gradient: ColorManager.linearGradientBackground),
         child: SafeArea(
-          child: ListView.builder(
-            itemBuilder: (ctx, index) {
-              return messages[index];
-            },
-            itemCount: messages.length,
-          ),
-        ),
+            child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 12.0),
+          child: CalendarWidget(),
+        )),
       ),
     );
   }
