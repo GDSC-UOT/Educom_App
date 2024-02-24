@@ -1,5 +1,6 @@
 import 'package:ed_community/core/helpers/extensions.dart';
 import 'package:ed_community/core/helpers/spacers.dart';
+import 'package:ed_community/core/routing/routes.dart';
 import 'package:ed_community/core/themes/color_manager.dart';
 import 'package:ed_community/core/themes/text_style_manager.dart';
 import 'package:ed_community/core/widgets/main_button.dart';
@@ -36,6 +37,7 @@ class LogoutDialog extends StatelessWidget {
                 text: "Log Out",
                 onPressed: () {
                   context.pop();
+                  context.pushNamed(Routes.login);
                 }),
             const VerticalSpacer(space: 16),
             AppSecondaryButton(

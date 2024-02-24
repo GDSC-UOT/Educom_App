@@ -25,58 +25,60 @@ class SignupScreen extends StatelessWidget {
         decoration: const BoxDecoration(
             gradient: ColorManager.linearGradientBackground),
         child: SafeArea(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const VerticalSpacer(space: 15),
-              const Center(
-                child: AppLogo(),
-              ),
-              const VerticalSpacer(space: 30),
-              Text(
-                "Join our amazing learning community!",
-                style: TextStyleManager.bold16px
-                    .copyWith(color: ColorManager.white50),
-              ),
-              const VerticalSpacer(space: 10),
-              Text(
-                "Create your account now to begin your journey of communicating with your colleagues and teachers.",
-                style: TextStyleManager.regular14px
-                    .copyWith(color: ColorManager.white25),
-              ),
-              const VerticalSpacer(space: 32),
-              const SignupForm(),
-              const VerticalSpacer(space: 40),
-              AppMainButton(
-                text: "Sign up",
-                onPressed: () {
-                  context.pushNamed(Routes.home);
-                },
-              ),
-              const Spacer(),
-              Center(
-                child: RichText(
-                  textAlign: TextAlign.center,
-                  text: TextSpan(
-                    children: [
-                      TextSpan(
-                        text: "Already have an Account? ",
-                        style: TextStyleManager.regular14px
-                            .copyWith(color: ColorManager.gray200),
-                      ),
-                      TextSpan(
-                          text: "Log in",
-                          style: TextStyleManager.medium14px
-                              .copyWith(color: ColorManager.primary),
-                          recognizer: TapGestureRecognizer()
-                            ..onTap = () {
-                              context.pushReplacementNamed(Routes.login);
-                            }),
-                    ],
+          child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const VerticalSpacer(space: 15),
+                const Center(
+                  child: AppLogo(),
+                ),
+                const VerticalSpacer(space: 30),
+                Text(
+                  "Join our amazing learning community!",
+                  style: TextStyleManager.bold16px
+                      .copyWith(color: ColorManager.white50),
+                ),
+                const VerticalSpacer(space: 10),
+                Text(
+                  "Create your account now to begin your journey of communicating with your colleagues and teachers.",
+                  style: TextStyleManager.regular14px
+                      .copyWith(color: ColorManager.white25),
+                ),
+                const VerticalSpacer(space: 32),
+                const SignupForm(),
+                const VerticalSpacer(space: 40),
+                AppMainButton(
+                  text: "Sign up",
+                  onPressed: () {
+                    context.pushNamed(Routes.home);
+                  },
+                ),
+                const VerticalSpacer(space: 50),
+                Center(
+                  child: RichText(
+                    textAlign: TextAlign.center,
+                    text: TextSpan(
+                      children: [
+                        TextSpan(
+                          text: "Already have an Account? ",
+                          style: TextStyleManager.regular14px
+                              .copyWith(color: ColorManager.gray200),
+                        ),
+                        TextSpan(
+                            text: "Log in",
+                            style: TextStyleManager.medium14px
+                                .copyWith(color: ColorManager.primary),
+                            recognizer: TapGestureRecognizer()
+                              ..onTap = () {
+                                context.pushReplacementNamed(Routes.login);
+                              }),
+                      ],
+                    ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),

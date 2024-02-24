@@ -30,58 +30,60 @@ class _LoginScreenState extends State<LoginScreen> {
         decoration: const BoxDecoration(
             gradient: ColorManager.linearGradientBackground),
         child: SafeArea(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const VerticalSpacer(space: 15),
-              const Center(
-                child: AppLogo(),
-              ),
-              const VerticalSpacer(space: 60),
-              Text(
-                "welcome again!",
-                style: TextStyleManager.bold16px
-                    .copyWith(color: ColorManager.white50),
-              ),
-              const VerticalSpacer(space: 10),
-              Text(
-                "Please enter your login information for a unique and secure experience.",
-                style: TextStyleManager.regular14px
-                    .copyWith(color: ColorManager.white25),
-              ),
-              const VerticalSpacer(space: 35),
-              const LoginForm(),
-              const VerticalSpacer(space: 40),
-              AppMainButton(
-                text: "Login",
-                onPressed: () {
-                  context.pushNamed(Routes.home);
-                },
-              ),
-              const Spacer(),
-              Center(
-                child: RichText(
-                  textAlign: TextAlign.center,
-                  text: TextSpan(
-                    children: [
-                      TextSpan(
-                        text: "Don't have an account? ",
-                        style: TextStyleManager.regular14px
-                            .copyWith(color: ColorManager.gray200),
-                      ),
-                      TextSpan(
-                          text: "Sign up",
-                          style: TextStyleManager.medium14px
-                              .copyWith(color: ColorManager.primary),
-                          recognizer: TapGestureRecognizer()
-                            ..onTap = () {
-                              context.pushNamed(Routes.signup);
-                            }),
-                    ],
+          child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const VerticalSpacer(space: 15),
+                const Center(
+                  child: AppLogo(),
+                ),
+                const VerticalSpacer(space: 60),
+                Text(
+                  "welcome again!",
+                  style: TextStyleManager.bold16px
+                      .copyWith(color: ColorManager.white50),
+                ),
+                const VerticalSpacer(space: 10),
+                Text(
+                  "Please enter your login information for a unique and secure experience.",
+                  style: TextStyleManager.regular14px
+                      .copyWith(color: ColorManager.white25),
+                ),
+                const VerticalSpacer(space: 35),
+                const LoginForm(),
+                const VerticalSpacer(space: 40),
+                AppMainButton(
+                  text: "Login",
+                  onPressed: () {
+                    context.pushNamed(Routes.home);
+                  },
+                ),
+                const VerticalSpacer(space: 120),
+                Center(
+                  child: RichText(
+                    textAlign: TextAlign.center,
+                    text: TextSpan(
+                      children: [
+                        TextSpan(
+                          text: "Don't have an account? ",
+                          style: TextStyleManager.regular14px
+                              .copyWith(color: ColorManager.gray200),
+                        ),
+                        TextSpan(
+                            text: "Sign up",
+                            style: TextStyleManager.medium14px
+                                .copyWith(color: ColorManager.primary),
+                            recognizer: TapGestureRecognizer()
+                              ..onTap = () {
+                                context.pushNamed(Routes.signup);
+                              }),
+                      ],
+                    ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),

@@ -52,7 +52,7 @@ class TaskCardWidget extends StatelessWidget {
                       backgroundImage: AssetImage(profImage),
                       radius: 20.r,
                     ),
-                    HorizontalSpacer(space: 10),
+                    const HorizontalSpacer(space: 10),
                     Text(
                       profName,
                       style: TextStyleManager.medium14px,
@@ -65,18 +65,18 @@ class TaskCardWidget extends StatelessWidget {
                 ),
               ],
             ),
-            VerticalSpacer(space: 16),
+            const VerticalSpacer(space: 16),
             Text(
               taskDescription,
               style: TextStyleManager.regular12px
                   .copyWith(color: ColorManager.white25),
             ),
-            VerticalSpacer(space: 24),
+            const VerticalSpacer(space: 24),
             Divider(
               height: 1.h,
               color: ColorManager.secondaryBG,
             ),
-            VerticalSpacer(space: 8),
+            const VerticalSpacer(space: 8),
             Text(
               "End time ${DateFormat("yyyy.M.dd").format(endTime)}",
               style: TextStyleManager.regular10px

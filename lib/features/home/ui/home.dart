@@ -67,7 +67,7 @@ class _HomeScreenState extends State<HomeScreen> {
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                VerticalSpacer(space: 8),
+                const VerticalSpacer(space: 8),
                 Padding(
                   padding: EdgeInsets.symmetric(
                     horizontal: 16.0.w,
