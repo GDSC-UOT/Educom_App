@@ -25,35 +25,33 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       key: scaffoldKey,
       drawer: const NavigationDrawerWidget(),
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        automaticallyImplyLeading: false,
-        leading: const AppLogo(),
-        leadingWidth: 32,
-        title: Text(
-          "EduCommunity",
-          style: TextStyleManager.regular14px,
-        ),
-        actions: [
-          GestureDetector(
-            onTap: () {
-              scaffoldKey.currentState?.openDrawer();
-            },
-            child: Container(
-              height: 55.h,
-              width: 55.w,
-              decoration: BoxDecoration(
-                color: ColorManager.fieldColor,
-                borderRadius: BorderRadius.circular(40.r),
-              ),
-              child: const Icon(
-                Icons.menu,
-                color: Colors.white,
-              ),
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(70.h),
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 8.h),
+          child: AppBar(
+            backgroundColor: Colors.transparent,
+            elevation: 0,
+            automaticallyImplyLeading: false,
+            leading: const AppLogo(),
+            leadingWidth: 32,
+            title: Text(
+              "EduCommunity",
+              style: TextStyleManager.regular14px,
             ),
+            actions: [
+              GestureDetector(
+                onTap: () {
+                  scaffoldKey.currentState?.openDrawer();
+                },
+                child: const Icon(
+                  Icons.menu,
+                  color: Colors.white,
+                ),
+              ),
+            ],
           ),
-        ],
+        ),
       ),
       extendBodyBehindAppBar: true,
       backgroundColor: Colors.transparent,
@@ -69,15 +67,13 @@ class _HomeScreenState extends State<HomeScreen> {
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                VerticalSpacer(space: 8),
                 Padding(
                   padding: EdgeInsets.symmetric(
                     horizontal: 16.0.w,
                   ),
                   child: const Column(
                     children: [
-                      VerticalSpacer(
-                        space: 16,
-                      ),
                       AppTextFormField(
                         hintText: "Search Anything",
                         prefixIcon: Icon(
